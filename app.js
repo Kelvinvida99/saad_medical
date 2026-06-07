@@ -1,46 +1,6 @@
 /* ── STATE ── */
 let currentCategory = 'todos';
 let searchQuery = '';
-let currentSlide = 0;
-let slideTimer = null;
-
-const heroSlides = [
-  {
-    img: 'assects/Fotos Especiales/Portada.png',
-    title: 'Calidad y confianza en cada producto',
-    desc: 'Laboratorio Saad Medical — medicamentos y suplementos de alta calidad para tu salud.',
-    btn: 'Ver catálogo',
-    href: '#productos',
-  },
-  {
-    img: 'assects/Fotos Especiales/Portada 2.png',
-    title: 'Nuestra línea Life Made',
-    desc: 'Colágeno, Omega-3, Vitaminas y más. Suplementos que marcan la diferencia.',
-    btn: 'Ver suplementos',
-    href: '#productos',
-  },
-  {
-    img: 'assects/Fotos Especiales/presentacion 3.jpg',
-    title: 'Dolocom — Elimina el dolor fuerte',
-    desc: 'Analgésico · Antiinflamatorio · Antineurálgico · Antireumático. Diclofenac Sódico + Complejo B1-B6-B12.',
-    btn: 'Ver Dolocom',
-    href: '#productos',
-  },
-  {
-    img: 'assects/Fotos Especiales/Vitamina C y Aceite de Linaza.png',
-    title: 'Múltiples suplementos para tu salud',
-    desc: 'Vitamina C, Aceite de Linaza, Omega-3 y más. Todo lo que tu cuerpo necesita en un solo lugar.',
-    btn: 'Ver vitaminas',
-    href: '#productos',
-  },
-  {
-    img: 'assects/Fotos Especiales/Vitamina C.png',
-    title: 'Vitamina C 500 mg',
-    desc: 'Fortalece tu sistema inmune con nuestra línea de vitaminas Life Made.',
-    btn: 'Ver vitaminas',
-    href: '#productos',
-  },
-];
 
 /* ── HELPERS ── */
 function normalize(str) {
@@ -56,37 +16,6 @@ function getFiltered() {
   });
 }
 
-/* ── RENDER HERO ── */
-function renderHero() {
-  const track = document.getElementById('hero-track');
-  const dotsEl = document.getElementById('hero-dots');
-  track.innerHTML = heroSlides.map((s, i) => `
-    <div class="hero-slide">
-      <img src="${s.img}" alt="${s.title}" loading="${i === 0 ? 'eager' : 'lazy'}">
-      <div class="hero-content">
-        <h1>${s.title}</h1>
-        <p>${s.desc}</p>
-        <a href="${s.href}" class="hero-btn">${s.btn}</a>
-      </div>
-    </div>
-  `).join('');
-
-  dotsEl.innerHTML = heroSlides.map((_, i) =>
-    `<button class="hero-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide(${i})" aria-label="Slide ${i+1}"></button>`
-  ).join('');
-}
-
-function goToSlide(n) {
-  currentSlide = (n + heroSlides.length) % heroSlides.length;
-  const track = document.getElementById('hero-track');
-  track.style.transform = `translateX(-${currentSlide * 100}%)`;
-  document.querySelectorAll('.hero-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-}
-
-function startAutoSlide() {
-  clearInterval(slideTimer);
-  slideTimer = setInterval(() => goToSlide(currentSlide + 1), 5000);
-}
 
 /* ── RENDER CATEGORIES ── */
 function renderCategories() {
@@ -156,20 +85,9 @@ function toggleMenu() {
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded', () => {
-  renderHero();
   renderCategories();
   renderProducts();
 
-  /* hero track style */
-  document.getElementById('hero-track').style.cssText =
-    'display:flex;width:100%;height:100%;transition:transform .5s ease;';
-
-  startAutoSlide();
-
   document.getElementById('search-input').addEventListener('input', onSearch);
   document.getElementById('search-form').addEventListener('submit', onSearchSubmit);
-
-  /* pause auto-slide on hover */
-  document.querySelector('.hero').addEventListener('mouseenter', () => clearInterval(slideTimer));
-  document.querySelector('.hero').addEventListener('mouseleave', startAutoSlide);
 });
