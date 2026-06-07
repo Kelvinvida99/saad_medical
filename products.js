@@ -56,7 +56,7 @@ const PRODUCTS = [
   { id: 42, name: 'Dolocom',                                     category: 'analgesicos',     img: 'assects/Dolocom Saad.png' },
   { id: 43, name: 'Ibuprofen Tabletas',                          category: 'analgesicos',     img: 'assects/Ibuprofeno.png' },
   { id: 44, name: 'Ibuprofen Suspensión Oral 100 mg/5ml',        category: 'analgesicos',     img: 'assects/Ibuprofeno suspension.png' },
-  { id: 45, name: 'Paracetamol + Diclofenac Tabletas (Satro Plus)', category: 'analgesicos', img: 'assects/Paracetamol + Diclofenac.png' },
+  { id: 45, name: 'Paracetamol + Diclofenac Tabletas (Satro Plus)', category: 'analgesicos', img: 'assects/Paracetamol y Diclofenac.png' },
   { id: 130,name: 'Micsa-15 (Meloxicam Tabletas BP 15 mg)',      category: 'analgesicos',     img: 'assects/Micsa - 15.png' },
 
   // ── VITAMINAS Y SUPLEMENTOS ──
@@ -64,13 +64,13 @@ const PRODUCTS = [
   { id: 47, name: 'Ácido Fólico Tabletas BP 5 mg',               category: 'vitaminas',       img: 'assects/Acido Folico.png' },
   // Archivo "Amoxicilina capsulas 100 mg.png" contiene Vitamina A
   { id: 48, name: 'Vitamina A 50,000 U.I. Perlas',               category: 'vitaminas',       img: 'assects/Amoxicilina capsulas 100 mg.png' },
-  { id: 49, name: 'Calcio Carbonato + Vitamina D3',              category: 'vitaminas',       img: 'assects/Calcio + D3.png' },
+  { id: 49, name: 'Calcio Carbonato + Vitamina D3',              category: 'vitaminas',       img: 'assects/Calcio y D3.png' },
   { id: 50, name: 'Coenzima Q10 100 mg',                         category: 'vitaminas',       img: 'assects/Coenzima Q10.png' },
   { id: 51, name: 'Colágeno 100 mg Cápsulas',                    category: 'vitaminas',       img: 'assects/Colageno.png' },
   { id: 52, name: 'Colágeno 380 mg + Ácido Hialurónico 100 mg', category: 'vitaminas',       img: 'assects/Colageno Acido Hialuronico.png' },
-  { id: 53, name: 'Colágeno Hidrolizado 475 mg + Biotina 5000 mcg', category: 'vitaminas',   img: 'assects/Colageno Hidrolizado + Biotina.png' },
-  { id: 54, name: 'Colágeno Hidrolizado 500 mg + Vitamina C 50 mg', category: 'vitaminas',   img: 'assects/Colageno Hidrolizado + vitamina C.png' },
-  { id: 55, name: 'Colágeno Hidrolizado 400 mg + Vitamina D3',   category: 'vitaminas',       img: 'assects/Colageno Hidrolizado + Vitamina D3.png' },
+  { id: 53, name: 'Colágeno Hidrolizado 475 mg + Biotina 5000 mcg', category: 'vitaminas',   img: 'assects/Colageno Hidrolizado y Biotina.png' },
+  { id: 54, name: 'Colágeno Hidrolizado 500 mg + Vitamina C 50 mg', category: 'vitaminas',   img: 'assects/Colageno Hidrolizado y vitamina C.png' },
+  { id: 55, name: 'Colágeno Hidrolizado 400 mg + Vitamina D3',   category: 'vitaminas',       img: 'assects/Colageno Hidrolizado y Vitamina D3.png' },
   { id: 56, name: 'Complejo B',                                   category: 'vitaminas',       img: 'assects/Complejo B.png' },
   { id: 57, name: 'Espirulina 500 mg',                           category: 'vitaminas',       img: 'assects/Espirulina 500 mg.png' },
   { id: 58, name: 'Melatonina 1 mg',                             category: 'vitaminas',       img: 'assects/Melatonina.png' },
